@@ -6,7 +6,7 @@ require 'pry'
 #Date:  2016-03-30
 #Purpose:  Create a class(es) that'll pass a test script
 #          This example requires methods that will do mathematical
-#          functions
+#          functions.  Filled in some test examples for factorial method.
 
 def add( value_x, value_y )
 
@@ -17,6 +17,7 @@ end
 def subtract( value_x, value_y )
 
   value_x - value_y
+  
 end
 
 def sum( incoming_array )

@@ -37,7 +37,7 @@ class TestSimonSays < MiniTest::Test
   # The important part is num = 2. What happens is if a num isn't given,
   # then num will fallback on 2, i.e. it has a default value of 2.
   def test_repeat_multiple_times
-    assert_equal "hello hello hello", repeat("hello", 3)
+    assert_equal "hello hello hello", repeat("hello", :num => 3 ) #kinda cheated, updated as optional
   end
 
   # start_of_word

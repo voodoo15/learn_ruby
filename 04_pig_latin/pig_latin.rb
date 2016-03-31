@@ -19,9 +19,13 @@ def translate( word )
     #If first letter is a vowel or no vowels in the word, just give the word
     if ( /[aeiou]/ =~ word ) == 0 || ( /[aeiou]/ =~ word ) == nil
       new_word = word
+    #If my word starts with a qu then we'll split the word with the qu together
     elsif word[ 0..1 ] == "qu"
       new_word = word[ 2..word.length ] + word[ 0..1 ]
     #if word.split.any? { |letter| /[aeiou]/ =~ letter }
+    #If my word starts with an squ then we'll split this word with the squ together
+    elsif word[ 0..2 ] == "squ"
+      new_word = word[ 3..word.length ] + word[ 0..2 ]
     else
       new_word = word[ ( /[aeiou]/ =~ word )..word.length ] + word[ 0..( ( /[aeiou]/ =~ word ) - 1 ) ]
     end
@@ -34,6 +38,7 @@ def translate( word )
 
   end
 
+  puts phrase
   phrase.strip
 
 end

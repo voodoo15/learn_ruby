@@ -8,7 +8,7 @@
 
 
 def translate( word )
-  #Practicing regular expressions. If I can find the first vowel then take the index
+  #Practicing regular expressions. Main idea: If I can find the first vowel then take the index
   #where that vowel is and split the word.  If word has no vowels or first letter is a vowel,
   #just put word in new_word variable.
 
@@ -18,16 +18,21 @@ def translate( word )
 
     #If first letter is a vowel or no vowels in the word, just give the word
     if ( /[aeiou]/ =~ word ) == 0 || ( /[aeiou]/ =~ word ) == nil
-      new_word = word
-    #If my word starts with a qu then we'll split the word with the qu together
-    elsif word[ 0..1 ] == "qu"
-      new_word = word[ 2..word.length ] + word[ 0..1 ]
-    #if word.split.any? { |letter| /[aeiou]/ =~ letter }
-    #If my word starts with an squ then we'll split this word with the squ together
-    elsif word[ 0..2 ] == "squ"
-      new_word = word[ 3..word.length ] + word[ 0..2 ]
-    else
-      new_word = word[ ( /[aeiou]/ =~ word )..word.length ] + word[ 0..( ( /[aeiou]/ =~ word ) - 1 ) ]
+        new_word = word
+
+      #If my word starts with a qu then we'll split the word with the qu together
+      elsif word[ 0..1 ] == "qu"
+        new_word = word[ 2..word.length ] + word[ 0..1 ]
+
+      #Keeping below if I wanna find a word that has a vowel 
+      #if word.split.any? { |letter| /[aeiou]/ =~ letter }
+
+      #If my word starts with an squ then we'll split this word with the squ together
+      elsif word[ 0..2 ] == "squ"
+        new_word = word[ 3..word.length ] + word[ 0..2 ]
+
+      else
+        new_word = word[ ( /[aeiou]/ =~ word )..word.length ] + word[ 0..( ( /[aeiou]/ =~ word ) - 1 ) ]
     end
 
     #Add ay if vowel is at the front of the new word

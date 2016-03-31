@@ -35,9 +35,10 @@ end
 
 def titleize ( phrase )
   #small_words = ["and", "over", "the"]
-  #Taking the phrase and splitting into array,
-  #Capitalizing the words and rejoining to a string (trying to challenge and do it in one line).  I'd usually split something like this
-  #Did a first capitalize to the phrase to get cases where "The" is the first word.
-  new_phrase = ( phrase.capitalize! ).split.each { | word | word.capitalize! unless ( word.downcase == "and" || word.downcase == "over" || word.downcase == "the") }.join(" ").strip
+  #Taking the phrase and splitting into array.  Capitalizing the words and rejoining
+  #to a string (trying a personal challenge and doing in one line).  I'd usually split
+  #something like this in multiple lines.
+  #Did a first capitalize to the phrase to get cases where "The or Over" is the first word.
+  ( phrase.capitalize! ).split.each { | word | word.capitalize! unless ( word.downcase == "and" || word.downcase == "over" || word.downcase == "the") }.join(" ").strip
 
 end

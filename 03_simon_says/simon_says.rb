@@ -1,3 +1,5 @@
+require "pry"
+
 #Exercise Debugging and Testing
 #Example 4
 #Name:  Arnold Redoblado
@@ -34,8 +36,8 @@ end
 def titleize ( phrase )
   #small_words = ["and", "over", "the"]
   #Taking the phrase and splitting into array,
-  #Capitalizing the words and rejoining to a string
-  phrase.split.each { | word | word.capitalize! }.join(" ").strip
-  #phrase.split.each { | word | word.downsize! if word = "and" || word = "over" || word = "the" }.join(" ").strip
+  #Capitalizing the words and rejoining to a string (trying to challenge and do it in one line).  I'd usually split something like this
+  #Did a first capitalize to the phrase to get cases where "The" is the first word.
+  new_phrase = ( phrase.capitalize! ).split.each { | word | word.capitalize! unless ( word.downcase == "and" || word.downcase == "over" || word.downcase == "the") }.join(" ").strip
 
 end
